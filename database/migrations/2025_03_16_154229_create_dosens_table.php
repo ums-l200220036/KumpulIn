@@ -7,11 +7,9 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('dosens', function (Blueprint $table) {
-            $table->string('ridn')->primary();
-            $table->string('nama_dosen');
-            $table->date('tanggal_lahir');
-            $table->string('prodi_dosen');
-            $table->string('email_dosen')->unique();
+            $table->string('nidn')->primary();
+            $table->string('nama');
+            $table->string('password_ds');
             $table->timestamps();
         });
     }
