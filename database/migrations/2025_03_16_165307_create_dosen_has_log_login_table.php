@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dosen_has_log_logins', function (Blueprint $table) {
+        Schema::create('dosen_has_log_login', function (Blueprint $table) {
             $table->string('nidn');
             $table->unsignedBigInteger('log_login_id_log');
-            $table->foreign('nidn')->references('nidn')->on('dosens')->onDelete('cascade');
-            $table->foreign('log_login_id_log')->references('id_log')->on('log_logins')->onDelete('cascade');
+            $table->foreign('nidn')->references('nidn')->on('dosen')->onDelete('cascade');
+            $table->foreign('log_login_id_log')->references('id_log')->on('log_login')->onDelete('cascade');
         });
     }
 

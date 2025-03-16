@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('mahasiswa_has_log_logins', function (Blueprint $table) {
+        Schema::create('mahasiswa_has_log_login', function (Blueprint $table) {
             $table->string('mahasiswa_nim');
             $table->unsignedBigInteger('log_login_id_log');
             $table->foreign('mahasiswa_nim')->references('nim')->on('mahasiswa')->onDelete('cascade');
-            $table->foreign('log_login_id_log')->references('id_log')->on('log_logins')->onDelete('cascade');
+            $table->foreign('log_login_id_log')->references('id_log')->on('log_login')->onDelete('cascade');
         });
     }
 
