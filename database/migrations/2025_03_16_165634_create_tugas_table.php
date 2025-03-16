@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('judul');
             $table->text('deskripsi');
             $table->foreign('mahasiswa_nim')->references('nim')->on('mahasiswa')->onDelete('cascade');
-            $table->foreign('dosen_has_log_login_log_login_id_log')->references('id_log')->on('log_login')->onDelete('cascade');
-            $table->foreign('dosen_has_log_login_dosen_nidn')->references('nidn')->on('dosen')->onDelete('cascade');
+            $table->foreign('dosen_has_log_login_log_login_id_log')->references('id_log')->on('log_logins')->onDelete('cascade');
+            $table->foreign('dosen_has_log_login_dosen_nidn')->references('nidn')->on('dosens')->onDelete('cascade');
             $table->timestamps();
         });
     }

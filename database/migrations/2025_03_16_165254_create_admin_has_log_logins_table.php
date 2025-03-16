@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('admin_id_admin');
             $table->unsignedBigInteger('log_login_id_log');
             $table->foreign('admin_id_admin')->references('id_admin')->on('admin')->onDelete('cascade');
-            $table->foreign('log_login_id_log')->references('id_log')->on('log_login')->onDelete('cascade');
+            $table->foreign('log_login_id_log')->references('id_log')->on('log_logins')->onDelete('cascade');
         });
     }
 
