@@ -13,3 +13,7 @@ Route::get('coba', function(){
 Route::get('apa', function(){
     return view('coba');
 });
+
+Route::get('isoh', function(){
+    return view('coba');
+});
