@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('log_pt', function (Blueprint $table) {
-            $table->id('idlog_pt');
-            $table->unsignedBigInteger('pengumpulan_tg_id_pt');
-            $table->timestamp('timestamp');
+        Schema::create('log_logins', function (Blueprint $table) {
+            $table->id('id_log');
             $table->timestamps();
         });
     }
@@ -24,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('log_pt');
+        Schema::dropIfExists('log_logins');
     }
 };
