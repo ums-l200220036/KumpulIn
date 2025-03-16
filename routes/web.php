@@ -9,3 +9,7 @@ Route::get('/', function () {
 Route::get('coba', function(){
     return view('coba');
 });
+
+Route::get('ganti', function(){
+    return view('ganti');
+});
