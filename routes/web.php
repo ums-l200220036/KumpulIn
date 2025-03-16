@@ -17,3 +17,7 @@ Route::get('apa', function(){
 Route::get('isoh', function(){
     return view('coba');
 });
+
+Route::get('ganti', function(){
+    return view('ganti');
+});
