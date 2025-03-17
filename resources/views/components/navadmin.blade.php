@@ -18,7 +18,7 @@
       <!-- Loading screen -->
       <div
         x-ref="loading"
-        class="fixed inset-0 z-50 flex items-center justify-center text-white bg-black bg-opacity-50"
+        class="fixed inset-0 z-50 flex items-center justify-center text-white bg-black bg-opacity-75"
         style="backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px)"
       >
         Loading.....
@@ -27,7 +27,7 @@
       <!-- Sidebar backdrop -->
       <div
         x-show.in.out.opacity="isSidebarOpen"
-        class="fixed inset-0 z-10 bg-black bg-opacity-20 lg:hidden"
+        class="fixed inset-0 z-10 lg:hidden"
         style="backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px)"
       ></div>
 
@@ -142,9 +142,9 @@
             <div class="relative flex items-center space-x-3">
 
 
-
+                <h4 class="hidden md:block">Admin</h4>
               <!-- avatar button -->
-              <div class="relative" x-data="{ isOpen: false }">
+              <div class="relative mr-1" x-data="{ isOpen: false }">
                 <button @click="isOpen = !isOpen" class="p-1 bg-gray-200 rounded-full focus:outline-none focus:ring">
                   <img
                     class="object-cover w-8 h-8 rounded-full"
