@@ -3,7 +3,7 @@
 <!-- component -->
 <div class="mt-6 items-center flex justify-center">
         
-        <form id="form" class="bg-white w-[50%] shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <form id="form" class="bg-white w-[40%] shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <h1 class="block text-gray-700 font-bold mb-2 text-xl text-center">TAMBAHKAN DATA DOSEN</h1>
             <br>
             <div class="mb-4">
