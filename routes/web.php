@@ -7,7 +7,7 @@ Route::get('/', function () {
 });
 
 Route::get('coba', function(){
-    return view('coba');
+    return view('admin/home');
 });
 
 Route::get('apa', function(){
@@ -15,7 +15,7 @@ Route::get('apa', function(){
 });
 
 Route::get('isoh', function(){
-    return view('coba');
+    return view('layout/navbaradmin');
 });
 
 Route::get('ganti', function(){
