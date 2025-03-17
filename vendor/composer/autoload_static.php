@@ -336,8 +336,8 @@ class ComposerStaticInit88970a0117c062eed55fa8728fc43833
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -517,7 +517,15 @@ class ComposerStaticInit88970a0117c062eed55fa8728fc43833
 
     public static $classMap = array (
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Models\\Admin' => __DIR__ . '/../..' . '/app/Models/Admin.php',
+        'App\\Models\\Admin_has_log_login' => __DIR__ . '/../..' . '/app/Models/Admin_has_log_login.php',
         'App\\Models\\Dosen' => __DIR__ . '/../..' . '/app/Models/Dosen.php',
+        'App\\Models\\Dosen_has_log_login' => __DIR__ . '/../..' . '/app/Models/Dosen_has_log_login.php',
+        'App\\Models\\Log_tugas' => __DIR__ . '/../..' . '/app/Models/Log_tugas.php',
+        'App\\Models\\Mahasiswa' => __DIR__ . '/../..' . '/app/Models/Mahasiswa.php',
+        'App\\Models\\Mahasiswa_has_log_login' => __DIR__ . '/../..' . '/app/Models/Mahasiswa_has_log_login.php',
+        'App\\Models\\Pengumpulan' => __DIR__ . '/../..' . '/app/Models/Pengumpulan.php',
+        'App\\Models\\Tugas' => __DIR__ . '/../..' . '/app/Models/Tugas.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',

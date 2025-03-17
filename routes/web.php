@@ -10,8 +10,8 @@ Route::get('dashboard', function(){
     return view('admin/home');
 });
 
-Route::get('apa', function(){
-    return view('coba');
+Route::get('adddosen', function(){
+    return view('admin/adddosen');
 });
 
 Route::get('isoh', function(){
