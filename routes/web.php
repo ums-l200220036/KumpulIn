@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin/home');
 });
 
 Route::get('dashboard', function(){
@@ -14,8 +14,8 @@ Route::get('adddosen', function(){
     return view('admin/adddosen');
 });
 
-Route::get('isoh', function(){
-    return view('layout/navbaradmin');
+Route::get('addmahasiswa', function(){
+    return view('admin/addmahasiswa');
 });
 
 Route::get('ganti', function(){
