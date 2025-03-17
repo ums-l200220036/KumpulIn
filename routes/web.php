@@ -1,23 +1,31 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
 
-Route::get('/', function () {
-    return view('admin/home');
+// Halaman Login
+Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
+
+// Proses Login
+Route::post('/login', [LoginController::class, 'login'])->name('login.post');
+
+// Proses Logout
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+// Middleware Role-based Dashboard
+Route::middleware(['auth:admin'])->group(function () {
+    Route::get('/admin/dashboard', function () {
+        return view('admin.home');
+    })->name('admin.home');
 });
 
-Route::get('dashboard', function(){
-    return view('admin/home');
+Route::middleware(['auth:dosen'])->group(function () {
+    Route::get('/dosen/dashboard', function () {
+        return view('dosen.home');
+    })->name('dosen.home');
 });
 
-Route::get('adddosen', function(){
-    return view('admin/adddosen');
-});
-
-Route::get('addmahasiswa', function(){
-    return view('admin/addmahasiswa');
-});
-
-Route::get('ganti', function(){
-    return view('ganti');
+Route::middleware(['auth:mahasiswa'])->group(function () {
+    Route::get('/mahasiswa/dashboard', function () {
+        return view('mahasiswa.home');
+    })->name('mahasiswa.home');
 });
