@@ -1,11 +1,5 @@
 <x-navadmin>    
-  <div
-  class="flex flex-col items-start justify-between pb-6 space-y-4 border-b lg:items-center lg:space-y-0 lg:flex-row"
->
-  <h1 class="text-2xl font-semibold whitespace-nowrap">Dashboard</h1>
-  
-</div>
-
+  @section('title', 'Dashboard')
 <!-- Start Content -->
 <div class="grid grid-cols-1 gap-5 mt-6 sm:grid-cols-2 lg:grid-cols-4">
   <template x-for="i in 4" :key="i">
