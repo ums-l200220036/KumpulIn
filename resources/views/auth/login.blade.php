@@ -19,8 +19,8 @@
 
             <!-- User ID -->
             <div>
-                <x-label for="user_id" value="ID (Admin/Dosen/Mahasiswa)" />
-                <x-input id="user_id" class="block mt-1 w-full" type="text" name="user_id" :value="old('user_id')" required autofocus placeholder="Masukkan ID Admin/NIDN/NIM" />
+                <x-label for="user_id" value="User ID" />
+                <x-input id="user_id" class="block mt-1 w-full" type="text" name="user_id" :value="old('user_id')" required autofocus placeholder="Masukkan User ID Anda" />
             </div>
 
             <!-- Password -->
