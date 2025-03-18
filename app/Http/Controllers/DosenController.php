@@ -37,4 +37,11 @@ class DosenController extends Controller
        
     }
 
+    public function destroy($nidn)
+    {
+        $dosen = Dosen::findOrFail($nidn);
+        $dosen->delete();
+        return redirect()->route('view.dosen')->with('success', 'Data Dosen berhasil dihapus.');
+    }
+
 }

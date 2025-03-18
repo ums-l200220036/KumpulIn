@@ -64,7 +64,12 @@
                   <!-- Tombol Edit -->
                   <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
                     <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                    <a href="#" class="text-red-600 hover:text-red-900">Delete</a>
+                    <form action="{{ route('dosen.destroy', $d->nidn) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="text-red-500 hover:text-red-700 hover:underline">
+                          Delete
+                      </button>
                   </td>
                 </tr>
               @endforeach
