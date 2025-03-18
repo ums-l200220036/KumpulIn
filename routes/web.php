@@ -30,6 +30,6 @@ Route::middleware(['auth:mahasiswa'])->group(function () {
     })->name('mahasiswa.home');
 });
 
-Route::get('tabledosen', function(){
-    return view('admin.tbladmin');
+Route::get('tbldosen', function(){
+    return view('admin.tbldosen');
 });
