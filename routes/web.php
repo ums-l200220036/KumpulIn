@@ -49,3 +49,4 @@ Route::get('/tbldosen', [DosenController::class, 'index'])->name('view.dosen');
 
 Route::post('/inputmahasiswa', [MahasiswaController::class, 'input'])->name('input.mahasiswa');
 Route::get('/tblmahasiswa', [MahasiswaController::class, 'index'])->name('view.mahasiswa');
+Route::delete('/mahasiswa/destroy/{nim}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');
