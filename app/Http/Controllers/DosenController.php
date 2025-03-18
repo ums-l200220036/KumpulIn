@@ -31,4 +31,11 @@ class DosenController extends Controller
        
     }
 
+    public function view()
+    {
+        $dosen = Dosen::all();
+        dd($dosen); // Debugging untuk memastikan data dikirim
+        return view('admin.tbldosen', compact('dosen'));
+    }
+
 }
