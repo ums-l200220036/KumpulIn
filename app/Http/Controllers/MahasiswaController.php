@@ -14,6 +14,13 @@ class MahasiswaController extends Controller
         return view('admin.tblmahasiswa', compact('mhs'));
     }
 
+    public function destroy($nim)
+    {
+        $mhs = Mahasiswa::findOrFail($nim);
+        $mhs->delete();
+        return redirect()->route('view.mahasiswa')->with('success', 'Data Mahasiswa berhasil dihapus.');
+    }
+
     public function input(Request $request )
     {
         $validated = $request->validate([

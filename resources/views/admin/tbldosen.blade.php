@@ -51,14 +51,12 @@
                   <div class="text-sm font-medium text-gray-900">{{ $d->mata_kuliah }}</div>
                 </td>
   
-                <!-- Tombol Edit -->
-                <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                  <button @click="openEditPopup({ nama: '{{ $d->nama }}', nidn: '{{ $d->nidn }}', mata_kuliah: '{{ $d->mata_kuliah }}' })" class="text-indigo-600 hover:text-indigo-900">
-                    Edit
-                  </button>
-                  <button type="submit" class="text-red-600 hover:text-red-900">Delete</button>
-                </td>
-              </tr>
+                  <!-- Tombol Edit -->
+                  <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
+                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                    <a href="#" class="text-red-600 hover:text-red-900">Delete</a>
+                  </td>
+                </tr>
               @endforeach
             </tbody>
           </table>

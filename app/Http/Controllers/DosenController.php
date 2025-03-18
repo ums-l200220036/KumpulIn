@@ -32,33 +32,9 @@ class DosenController extends Controller
             'password_ds' => Hash::make($request->password_ds)
         ]);
 
-        return redirect()->route('view.dosen');
+        return redirect()->route('home.all');
+
+       
     }
 
-    // Method untuk mengupdate data
-    public function update(Request $request)
-    {
-    // Validasi input
-    $request->validate([
-        'nama' => 'required|string|max:255',
-        'nidn' => 'required|string|max:20',
-        'mata_kuliah' => 'required|string|max:255',
-    ]);
-
-    // Temukan data dosen berdasarkan NIDN
-    $dosen = Dosen::where('nidn', $request->nidn)->first();
-
-    if ($dosen) {
-        // Update data
-        $dosen->update([
-            'nama' => $request->nama,
-            'nidn' => $request->nidn,
-            'mata_kuliah' => $request->mata_kuliah,
-        ]);
-
-        return redirect()->back()->with('success', 'Data dosen berhasil diupdate!');
-    } else {
-        return redirect()->back()->with('error', 'Dosen tidak ditemukan!');
-    }
-}
 }

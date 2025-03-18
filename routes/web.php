@@ -46,7 +46,7 @@ Route::get('home', function(){
 
 Route::post('/inputdosen', [DosenController::class, 'input'])->name('input.dosen');
 Route::get('/tbldosen', [DosenController::class, 'index'])->name('view.dosen');
-Route::put('/update-dosen', [DosenController::class, 'update'])->name('update.dosen');
 
 Route::post('/inputmahasiswa', [MahasiswaController::class, 'input'])->name('input.mahasiswa');
 Route::get('/tblmahasiswa', [MahasiswaController::class, 'index'])->name('view.mahasiswa');
+Route::delete('/mahasiswa/destroy/{nim}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');
