@@ -39,8 +39,6 @@ class MahasiswaController extends Controller
         ]);
         
 
-        return redirect()->route('home.all');
-
-       
+        return redirect()->route('view.mahasiswa');       
     }
 }
