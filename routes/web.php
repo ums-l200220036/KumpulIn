@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\DosenController;
 
 // Halaman Login
 Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
@@ -37,3 +38,13 @@ Route::get('tabeldosen', function(){
 Route::get('tabelmahasiswa', function(){
     return view('admin.tblmahasiswa');
 });
+
+Route::get('adddosen', function(){
+    return view('admin.adddosen');
+});
+
+Route::get('home', function(){
+    return view('admin.home');
+})->name('home.all');
+
+Route::post('/inputdosen', [DosenController::class, 'input'])->name('input.dosen');
