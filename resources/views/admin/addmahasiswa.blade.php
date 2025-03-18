@@ -59,5 +59,16 @@
         
     </div>
     <script src="https://kit.fontawesome.com/1e268974cb.js" crossorigin="anonymous"></script>
+    {{-- @if(session('success'))
+        <script>
+            Swal.fire({
+                title: "Success!",
+                text: "{{ session('success') }}",
+                icon: "success",
+                confirmButtonText: "OK"
+            });
+        </script>
+    @endif --}}
 
+    
 </x-navadmin>

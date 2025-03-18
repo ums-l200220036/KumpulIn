@@ -43,7 +43,9 @@ class DosenController extends Controller
             'password_ds' => Hash::make($request->password_ds)
         ]);
 
-        return redirect()->route('view.dosen');
+
+
+        return redirect()->route('view.dosen')->with('success', 'Data berhasil disimpan!');
 
        
     }
@@ -60,7 +62,7 @@ class DosenController extends Controller
             'mata_kuliah' => $request->mata_kuliah,
         ]);
 
-        return redirect()->route('view.dosen')->with('success', 'Data dosen berhasil diperbarui!');
+        return redirect()->route('view.dosen')->with('success', 'Data berhasil disimpan!');
     }
 
 }

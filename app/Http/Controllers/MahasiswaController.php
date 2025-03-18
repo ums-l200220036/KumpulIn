@@ -42,8 +42,9 @@ class MahasiswaController extends Controller
             'password_ms' => Hash::make($request->password_ms)
         ]);
         
+        return redirect()->route('view.mahasiswa')->with('success', 'Data berhasil disimpan!');
 
-        return redirect()->route('view.mahasiswa');       
+        // return redirect()->route('view.mahasiswa');       
     }
 
     public function update(Request $request, $nim)
