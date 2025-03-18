@@ -575,6 +575,8 @@ class ComposerStaticInit88970a0117c062eed55fa8728fc43833
         'App\\Actions\\Jetstream\\DeleteUser' => __DIR__ . '/../..' . '/app/Actions/Jetstream/DeleteUser.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\DosenController' => __DIR__ . '/../..' . '/app/Http/Controllers/DosenController.php',
+        'App\\Http\\Controllers\\MahasiswaController' => __DIR__ . '/../..' . '/app/Http/Controllers/MahasiswaController.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Models\\Admin' => __DIR__ . '/../..' . '/app/Models/Admin.php',
         'App\\Models\\Admin_has_log_login' => __DIR__ . '/../..' . '/app/Models/Admin_has_log_login.php',

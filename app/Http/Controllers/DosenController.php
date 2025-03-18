@@ -43,5 +43,20 @@ class DosenController extends Controller
 
        
     }
+    public function update(Request $request, $nidn)
+    {
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'mata_kuliah' => 'required|string|max:255',
+        ]);
+
+        $dosen = Dosen::where('nidn', $nidn)->firstOrFail();
+        $dosen->update([
+            'nama' => $request->nama,
+            'mata_kuliah' => $request->mata_kuliah,
+        ]);
+
+        return redirect()->route('view.dosen')->with('success', 'Data dosen berhasil diperbarui!');
+    }
 
 }

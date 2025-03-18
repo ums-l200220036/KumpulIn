@@ -41,4 +41,20 @@ class MahasiswaController extends Controller
 
         return redirect()->route('view.mahasiswa');       
     }
+
+    public function update(Request $request, $nim)
+    {
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'semester' => 'required|integer|min:1|max:14',
+        ]);
+
+        $mahasiswa = Mahasiswa::where('nim', $nim)->firstOrFail();
+        $mahasiswa->update([
+            'nama' => $request->nama,
+            'semester' => $request->semester,
+        ]);
+
+        return redirect()->route('view.mahasiswa')->with('success', 'Data mahasiswa berhasil diperbarui!');
+    }
 }

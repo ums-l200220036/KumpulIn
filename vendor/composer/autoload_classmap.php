@@ -14,6 +14,8 @@ return array(
     'App\\Actions\\Jetstream\\DeleteUser' => $baseDir . '/app/Actions/Jetstream/DeleteUser.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\DosenController' => $baseDir . '/app/Http/Controllers/DosenController.php',
+    'App\\Http\\Controllers\\MahasiswaController' => $baseDir . '/app/Http/Controllers/MahasiswaController.php',
     'App\\Http\\Middleware\\RedirectIfAuthenticated' => $baseDir . '/app/Http/Middleware/RedirectIfAuthenticated.php',
     'App\\Models\\Admin' => $baseDir . '/app/Models/Admin.php',
     'App\\Models\\Admin_has_log_login' => $baseDir . '/app/Models/Admin_has_log_login.php',
