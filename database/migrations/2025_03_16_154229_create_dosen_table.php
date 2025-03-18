@@ -9,6 +9,7 @@ return new class extends Migration {
         Schema::create('dosen', function (Blueprint $table) {
             $table->string('nidn')->primary();
             $table->string('nama');
+            $table->string('mata_kuliah');
             $table->string('password_ds');
             $table->timestamps();
         });

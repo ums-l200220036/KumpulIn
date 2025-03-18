@@ -31,5 +31,5 @@ Route::middleware(['auth:mahasiswa'])->group(function () {
 });
 
 Route::get('tabledosen', function(){
-    return view('admin.tbladmin');
+    return view('admin.tbldosen');
 });
