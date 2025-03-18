@@ -29,3 +29,7 @@ Route::middleware(['auth:mahasiswa'])->group(function () {
         return view('mahasiswa.home');
     })->name('mahasiswa.home');
 });
+
+Route::get('tabledosen', function(){
+    return view('admin.tbladmin');
+});

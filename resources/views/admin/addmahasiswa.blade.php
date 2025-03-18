@@ -1,4 +1,4 @@
-<x-navadmin>
+<x-navigasi>
 
 <!-- component -->
 <div class="mt-6 items-center flex justify-center">

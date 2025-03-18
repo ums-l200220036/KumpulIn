@@ -1,26 +1,5 @@
-<x-navigasi>    
-  @section('title', 'Dashboard')
-<!-- Start Content -->
-<div class="grid grid-cols-1 gap-5 mt-6 sm:grid-cols-2 lg:grid-cols-4">
-  <template x-for="i in 4" :key="i">
-    <div class="p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-lg">
-      <div class="flex items-start justify-between">
-        <div class="flex flex-col space-y-2">
-          <span class="text-gray-400">Total Users</span>
-          <span class="text-lg font-semibold">100,221</span>
-        </div>
-        <div class="p-10 bg-gray-200 rounded-md"></div>
-      </div>
-      <div>
-        <span class="inline-block px-2 text-sm text-white bg-green-300 rounded">14%</span>
-        <span>from 2019</span>
-      </div>
-    </div>
-  </template>
-</div>
-
-<!-- Table see (https://tailwindui.com/components/application-ui/lists/tables) -->
-<h3 class="mt-6 text-xl">Users</h3>
+<x-navigasi>
+    <h3 class="mt-6 text-xl">Users</h3>
 <div class="flex flex-col mt-6">
   <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
