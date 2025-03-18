@@ -48,4 +48,4 @@ Route::get('home', function(){
 })->name('home.all');
 
 Route::post('/inputdosen', [DosenController::class, 'input'])->name('input.dosen');
-Route::get('/tbldosen', [DosenController::class, 'view'])->name('view-dosen');
+Route::get('/tbldosen', [DosenController::class, 'index'])->name('view.dosen');

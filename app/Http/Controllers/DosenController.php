@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\Hash;
 class DosenController extends Controller
 {
     
+    public function index()
+    {
+        $dosen = Dosen::all();
+        return view('admin.tbldosen', compact('dosen'));
+    }
+    
     public function input(Request $request )
     {
         $validated = $request->validate([
@@ -29,13 +35,6 @@ class DosenController extends Controller
         return redirect()->route('home.all');
 
        
-    }
-
-    public function view()
-    {
-        $dosen = Dosen::all();
-        dd($dosen); // Debugging untuk memastikan data dikirim
-        return view('admin.tbldosen', compact('dosen'));
     }
 
 }
