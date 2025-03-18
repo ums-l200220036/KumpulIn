@@ -12,13 +12,13 @@
                   scope="col"
                   class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
                 >
-                  NIDN
+                  Nama Dosen
                 </th>
                 <th
                   scope="col"
                   class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
                 >
-                  Nama Dosen
+                  NIDN
                 </th>
                 <th
                   scope="col"
@@ -34,7 +34,8 @@
             <tbody class="bg-white divide-y divide-gray-200">
               @foreach ($dosen as $d)
               <tr class="transition-all hover:bg-gray-100 hover:shadow-lg">
-                  <!-- NIDN + Gambar -->
+                  
+                  <!-- Nama Dosen + Gambar -->
                   <td class="px-6 py-4 whitespace-nowrap">
                     <div class="flex items-center">
                       <div class="flex-shrink-0 w-10 h-10">
@@ -45,14 +46,14 @@
                         />
                       </div>
                       <div class="ml-4">
-                        <div class="text-sm font-medium text-gray-900">{{ $d->nidn }}</div>
+                        <div class="text-sm font-medium text-gray-900">{{ $d->nama }}</div>
                       </div>
                     </div>
                   </td>
   
-                  <!-- Nama Dosen -->
+                  <!-- NIDN -->
                   <td class="px-6 py-4 whitespace-nowrap">
-                    <div class="text-sm font-medium text-gray-900">{{ $d->nama }}</div>
+                    <div class="text-sm font-medium text-gray-900">{{ $d->nidn }}</div>
                   </td>
   
                   <!-- Mata Kuliah -->
@@ -72,4 +73,4 @@
       </div>
     </div>
   </div>
-  </x-navigasi>  
+</x-navigasi>  
