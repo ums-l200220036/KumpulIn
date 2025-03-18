@@ -1,7 +1,10 @@
 <x-navigasi>
   @section('title', 'Daftar Dosen')
 
-  <div class="flex flex-col mt-6" x-data="{ showEdit: false, selectedDosen: {} }">
+  <a href="{{ route('form.dosen') }}" class="flex mt-6 bg-green-500 hover:bg-green-600 text-white font-bold py-1 w-[120px] rounded justify-center items-center gap-2">
+    <span class="text-xl">+</span> Tambah
+  </a>
+  <div class="flex flex-col mt-4" x-data="{ showEdit: false, selectedDosen: {} }">
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
       <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
         <div class="overflow-hidden border-b border-gray-200 rounded-md shadow-md">

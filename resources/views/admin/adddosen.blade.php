@@ -1,4 +1,5 @@
 <x-navigasi>
+@section('title', 'Tambah Dosen')
 
 <!-- component -->
 <div class="mt-6 items-center flex justify-center">

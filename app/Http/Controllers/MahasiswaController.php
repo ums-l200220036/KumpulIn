@@ -8,7 +8,11 @@ use Illuminate\Support\Facades\Hash;
 
 class MahasiswaController extends Controller
 {
-    public function index()
+    public function index(){
+        return view('admin.addmahasiswa');
+    }
+
+    public function view()
     {
         $mhs = Mahasiswa::all();
         return view('admin.tblmahasiswa', compact('mhs'));

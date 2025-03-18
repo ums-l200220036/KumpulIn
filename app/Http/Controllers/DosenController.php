@@ -10,7 +10,11 @@ use Illuminate\Support\Facades\Hash;
 class DosenController extends Controller
 {
     
-    public function index()
+    public function index(){
+        return view('admin.adddosen');
+    }
+
+    public function view()
     {
         $dosen = Dosen::all();
         return view('admin.tbldosen', compact('dosen'));

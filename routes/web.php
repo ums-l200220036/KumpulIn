@@ -44,13 +44,14 @@ Route::get('home', function(){
     return view('admin.home');
 })->name('home.all');
 
+Route::get('/adddosen', [DosenController::class, 'index'])->name('form.dosen');
+Route::get('/tbldosen', [DosenController::class, 'view'])->name('view.dosen');
 Route::post('/inputdosen', [DosenController::class, 'input'])->name('input.dosen');
-Route::get('/tbldosen', [DosenController::class, 'index'])->name('view.dosen');
 Route::delete('/dosen/destroy/{nidn}', [DosenController::class, 'destroy'])->name('dosen.destroy');
 Route::put('/dosen/{nidn}', [DosenController::class, 'update'])->name('dosen.update');
 
-
+Route::get('/addmahasiswa', [MahasiswaController::class, 'index'])->name('form.mhs');
 Route::post('/inputmahasiswa', [MahasiswaController::class, 'input'])->name('input.mahasiswa');
-Route::get('/tblmahasiswa', [MahasiswaController::class, 'index'])->name('view.mahasiswa');
+Route::get('/tblmahasiswa', [MahasiswaController::class, 'view'])->name('view.mahasiswa');
 Route::delete('/mahasiswa/destroy/{nim}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');
 Route::put('/mahasiswa/{nim}', [MahasiswaController::class, 'update'])->name('mahasiswa.update');
