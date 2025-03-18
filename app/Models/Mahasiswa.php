@@ -8,6 +8,8 @@ class Mahasiswa extends Authenticatable
 {
     protected $table = 'mahasiswa';
     protected $primaryKey = 'nim';
+    public $incrementing = false;
+    protected $keyType = 'string';
     protected $fillable = ['nim', 'nama', 'semester', 'password_ms'];
     protected $hidden = ['password_ms'];
 
