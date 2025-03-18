@@ -16,6 +16,13 @@ class DosenController extends Controller
         return view('admin.tbldosen', compact('dosen'));
     }
     
+    public function destroy($nidn)
+    {
+        $dosen = Dosen::findOrFail($nidn);
+        $dosen->delete();
+        return redirect()->route('view.dosen')->with('success', 'Data Dosen berhasil dihapus.');
+    }
+
     public function input(Request $request )
     {
         $validated = $request->validate([
@@ -32,7 +39,7 @@ class DosenController extends Controller
             'password_ds' => Hash::make($request->password_ds)
         ]);
 
-        return redirect()->route('home.all');
+        return redirect()->route('view.dosen');
 
        
     }
