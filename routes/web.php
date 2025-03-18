@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DosenController;
+use App\Http\Controllers\MahasiswaController;
 
 // Halaman Login
 Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
@@ -43,9 +44,15 @@ Route::get('adddosen', function(){
     return view('admin.adddosen');
 });
 
+Route::get('addmahasiswa', function(){
+    return view('admin.addmahasiswa');
+});
+
 Route::get('home', function(){
     return view('admin.home');
 })->name('home.all');
 
 Route::post('/inputdosen', [DosenController::class, 'input'])->name('input.dosen');
 Route::get('/tbldosen', [DosenController::class, 'index'])->name('view.dosen');
+
+Route::post('/inputmahasiswa', [MahasiswaController::class, 'input'])->name('input.mahasiswa');
