@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Hash;
 
 class MahasiswaController extends Controller
 {
+    public function index()
+    {
+        $mhs = Mahasiswa::all();
+        return view('admin.tblmahasiswa', compact('mhs'));
+    }
+
     public function input(Request $request )
     {
         $validated = $request->validate([

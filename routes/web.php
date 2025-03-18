@@ -32,14 +32,6 @@ Route::middleware(['auth:mahasiswa'])->group(function () {
     })->name('mahasiswa.home');
 });
 
-Route::get('tabeldosen', function(){
-    return view('admin.tbldosen');
-});
-
-Route::get('tabelmahasiswa', function(){
-    return view('admin.tblmahasiswa');
-});
-
 Route::get('adddosen', function(){
     return view('admin.adddosen');
 });
@@ -56,3 +48,4 @@ Route::post('/inputdosen', [DosenController::class, 'input'])->name('input.dosen
 Route::get('/tbldosen', [DosenController::class, 'index'])->name('view.dosen');
 
 Route::post('/inputmahasiswa', [MahasiswaController::class, 'input'])->name('input.mahasiswa');
+Route::get('/tblmahasiswa', [MahasiswaController::class, 'index'])->name('view.mahasiswa');
