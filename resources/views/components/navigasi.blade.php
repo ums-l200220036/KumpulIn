@@ -141,6 +141,7 @@
         <!-- Sidebar footer -->
         <div class="flex-shrink-0 p-2 border-t max-h-14">
           <button
+            onclick="confirmLogout()"
             class="flex items-center justify-center w-full px-4 py-2 space-x-1 font-medium tracking-wider uppercase bg-gray-100 border rounded-md focus:outline-none focus:ring"
           >
             <span>
@@ -162,6 +163,9 @@
             <span :class="{'lg:hidden': !isSidebarOpen}"> Logout </span>
           </button>
         </div>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+          @csrf
+        </form>
       </aside>
 
       <div class="flex flex-col flex-1 h-full overflow-hidden">
@@ -223,7 +227,12 @@
                     </li>
                   </ul>
                   <div class="flex items-center justify-center p-4 text-blue-700 underline border-t">
-                    <a href="#">Logout</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      @csrf
+                    </form>
+                    <a class="nav-link" href="#" onclick="confirmLogout()">
+                      Logout
+                    </a>
                   </div>
                 </div>
               </div>
@@ -269,6 +278,21 @@
             this.isSidebarOpen = !this.isSidebarOpen
           },
         }
+      }
+      function confirmLogout() {
+        Swal.fire({
+          title: "Apakah Anda yakin ingin logout?",
+          text: "Anda akan keluar dari sesi ini!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#d33",
+          cancelButtonColor: "#3085d6",
+          confirmButtonText: "Ya, Logout!"
+        }).then((result) => {
+          if (result.isConfirmed) {
+            document.getElementById('logout-form').submit();
+          }
+        });
       }
     </script>
 </div>

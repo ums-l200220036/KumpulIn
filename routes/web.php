@@ -3,6 +3,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\MahasiswaController;
+use Illuminate\Support\Facades\Auth;
+
 
 // Halaman Login
 Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
@@ -11,7 +13,12 @@ Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 
 // Proses Logout
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::post('/logout', function () {
+    Auth::logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+    return redirect('/');
+})->name('logout');
 
 // Middleware Role-based Dashboard
 Route::middleware(['auth:admin'])->group(function () {
