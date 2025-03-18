@@ -30,6 +30,10 @@ Route::middleware(['auth:mahasiswa'])->group(function () {
     })->name('mahasiswa.home');
 });
 
-Route::get('tabledosen', function(){
+Route::get('tabeldosen', function(){
     return view('admin.tbldosen');
+});
+
+Route::get('tabelmahasiswa', function(){
+    return view('admin.tblmahasiswa');
 });
