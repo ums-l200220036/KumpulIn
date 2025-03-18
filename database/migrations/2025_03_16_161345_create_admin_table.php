@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -17,7 +18,17 @@ return new class extends Migration
             $table->string('password');
             $table->timestamps();
         });
+
+        DB::table('admin')->insert([
+            'id_admin' => 'admin01',
+            'nama' => 'Admin 1',
+            'password' => bcrypt('admin111'),
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
+
+    
 
     /**
      * Reverse the migrations.
