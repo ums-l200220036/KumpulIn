@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pengumpulan extends Model
 {
-    //
+    protected $table = 'pengumpulan';
+    protected $fillable = ['file_url'];
 }

@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\PengumpulanController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DosenController;
@@ -71,4 +72,6 @@ Route::get('homemhs', function(){
 
 Route::get('kumpultugas', function(){
     return view('mahasiswa.kumpultugas');
-});
+})->name('mahasiswa.kumpultugas');
+
+Route::post('/kumpultugas', [PengumpulanController::class, 'input'])->name('mahasiswa.kumpul');

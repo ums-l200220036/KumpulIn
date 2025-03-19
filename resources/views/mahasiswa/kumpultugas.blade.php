@@ -15,7 +15,8 @@
         </div>
     </div>
 
-    <form class="w-1/2 mt-5 bg-white p-6 rounded-lg shadow-md" action="upload.php" method="post" enctype="multipart/form-data" x-data="{ fileName: '', fileType: '' }">
+    <form class="w-1/2 mt-5 bg-white p-6 rounded-lg shadow-md" action="{{ route('mahasiswa.kumpul') }}" method="post" enctype="multipart/form-data" x-data="{ fileName: '', fileType: '' }">
+        @csrf
         <h1 class="">Submit Tugas anda di Sini</h1>
         <label for="file" class="flex flex-col items-center justify-center min-h-[180px] rounded-lg border border-dashed border-gray-300 p-5 text-center cursor-pointer hover:bg-gray-50 transition">
             <!-- Heroicons Cloud Upload (sesuai request) -->
