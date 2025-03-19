@@ -7,7 +7,7 @@
                 <img src="https://i.pinimg.com/originals/25/0c/a0/250ca0295215879bd0d53e3a58fa1289.png" class="w-auto h-24 rounded-lg"/>
                 <div>
                     <p class="font-semibold text-base">Sistem Informasi</p>
-                    <p class="font-semibold text-sm text-gray-400">Tuags Minggu ke 12</p>
+                    <p class="font-semibold text-sm text-gray-400">Tugas Minggu ke 12</p>
                 </div>              
             </div>
                

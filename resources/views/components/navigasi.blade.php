@@ -67,7 +67,7 @@
           <ul class="p-2 overflow-hidden">
             <li>
               <a
-                href="{{ route('home.all') }}"
+                href="{{ route('admin.home') }}"
                 class="flex items-center p-2 space-x-2 rounded-md hover:bg-gray-100"
                 :class="{'justify-center': !isSidebarOpen}"
               >
