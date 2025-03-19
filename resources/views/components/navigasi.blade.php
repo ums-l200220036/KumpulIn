@@ -172,7 +172,7 @@
         <!-- Navbar -->
         <header class="flex-shrink-0 border-b">
           <div class="flex items-center justify-between p-2">
-            <!-- Navbar left -->
+            <!-- Navbar left -->Logout
             <div class="flex items-center space-x-3">
               <span class="p-2 text-xl font-semibold tracking-wider uppercase lg:hidden">KumpulIn</span>
               <!-- Toggle sidebar button -->
@@ -213,18 +213,22 @@
                 <div
                   @click.away="isOpen = false"
                   x-show.transition.opacity="isOpen"
-                  class="absolute mt-3 transform -translate-x-full bg-white rounded-md shadow-lg min-w-max"
+                  class="absolute mt-3 transform -translate-x-full bg-white w-52 rounded-md shadow-lg min-w-max"
                 >
-                  <div class="flex flex-col p-4 space-y-1 font-medium border-b">
+                  <div class="flex flex-col p-4 space-y-1 font-medium border-b justify-center items-center">
                     <span class="text-gray-800">{{ session('user_name', 'Guest') }}</span>
                     <span class="text-sm text-gray-500">
                       {{ session('user_info', '') }}
                   </span>
                   </div>
-                  <div class="flex items-center justify-center p-4 text-blue-700 underline border-t">
+                  <div class="flex items-center justify-center p-4 text-blue-700 border-t">
+
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                       @csrf
                     </form>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
+                    </svg>                    
                     <a class="nav-link" href="#" onclick="confirmLogout()">
                       Logout
                     </a>
