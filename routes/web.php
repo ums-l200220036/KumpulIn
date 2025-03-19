@@ -62,3 +62,13 @@ Route::post('/inputmahasiswa', [MahasiswaController::class, 'input'])->name('inp
 Route::get('/tblmahasiswa', [MahasiswaController::class, 'view'])->name('view.mahasiswa');
 Route::delete('/mahasiswa/destroy/{nim}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');
 Route::put('/mahasiswa/{nim}', [MahasiswaController::class, 'update'])->name('mahasiswa.update');
+
+
+// Dosen
+Route::get('homedosen', function(){
+    return view('dosen.home');
+});
+
+Route::get('addtugas', function(){
+    return view('dosen.addtugas');
+});
