@@ -77,6 +77,7 @@ Route::get('kumpultugas', function(){
 
 Route::post('/kumpultugas', [PengumpulanController::class, 'input'])->name('mahasiswa.kumpul');
 
-Route::get('viewkumpul', function(){
-    return view('dosen.viewkumpul');
-})->name('view.kumpul');
+Route::get('/dosen/viewkumpul', [PengumpulanController::class, 'index'])->name('kumpul.index');
+Route::get('/dosen/viewkumpul/{id_pt}', [PengumpulanController::class, 'view'])->name('kumpul.view');
+
+
