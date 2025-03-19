@@ -73,7 +73,9 @@ Route::get('homedosen', function(){
 
 Route::get('addtugas', function(){
     return view('dosen.addtugas');
-});
+})->name('add.tugas');
+
+Route::post('/inputtugas', [TugasController::class, 'input'])->name('dosen.addtugas');
 
 Route::get('homemhs', function(){
     return view('mahasiswa.home');
