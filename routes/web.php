@@ -72,3 +72,11 @@ Route::get('homedosen', function(){
 Route::get('addtugas', function(){
     return view('dosen.addtugas');
 });
+
+Route::get('homemhs', function(){
+    return view('mahasiswa.home');
+});
+
+Route::get('kumpultugas', function(){
+    return view('mahasiswa.kumpultugas');
+});
