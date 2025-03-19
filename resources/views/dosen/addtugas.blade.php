@@ -8,9 +8,11 @@
         <div class="mx-auto w-full max-w-[550px] bg-white">
         <form
             class="py-6 px-9"
-            action=""
+            action="{{ route('dosen.addtugas') }}"
             method="POST"
+            enctype="multipart/form-data"
         >
+            @csrf
             <div class="mb-5">
             <label
                 for="judul"
@@ -72,7 +74,7 @@
                 </div>
                 </label>
             </div>
-            formbold
+            <!-- formbold -->
             <div>
             <button type="submit" class="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none">Submit</button>
             </div>

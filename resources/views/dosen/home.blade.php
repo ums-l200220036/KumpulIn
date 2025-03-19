@@ -1,6 +1,6 @@
 <x-navigasi>
     @section('title', 'Home')
-    <a href="{{ route('form.dosen') }}" class="flex mt-6 bg-green-500 hover:bg-green-600 text-white font-bold py-1 w-[120px] rounded justify-center items-center gap-2">
+    <a href="{{ route('add.tugas') }}" class="flex mt-6 bg-green-500 hover:bg-green-600 text-white font-bold py-1 w-[120px] rounded justify-center items-center gap-2">
         <span class="text-xl">+</span> Buat Tugas
     </a>
     <div class="grid grid-cols-1 gap-5 mt-6 sm:grid-cols-2 lg:grid-cols-4 ">

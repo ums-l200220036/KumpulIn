@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\TugasController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -51,6 +52,7 @@ Route::get('home', function(){
     return view('admin.home');
 })->name('home.all');
 
+//Admin
 Route::get('/adddosen', [DosenController::class, 'index'])->name('form.dosen');
 Route::get('/tbldosen', [DosenController::class, 'view'])->name('view.dosen');
 Route::post('/inputdosen', [DosenController::class, 'input'])->name('input.dosen');
@@ -67,8 +69,9 @@ Route::put('/mahasiswa/{nim}', [MahasiswaController::class, 'update'])->name('ma
 // Dosen
 Route::get('homedosen', function(){
     return view('dosen.home');
-});
+})->name('home.dosen2');
 
 Route::get('addtugas', function(){
     return view('dosen.addtugas');
-});
+})->name('add.tugas');
+Route::post('/inputtugas', [TugasController::class, 'input'])->name('dosen.addtugas');
