@@ -193,15 +193,16 @@
             <!-- Navbar right -->
             <div class="relative flex items-center space-x-3">
 
-
-                <h4 class="hidden md:block">Admin</h4>
+              <h4 class="hidden md:block">
+                {{ ucfirst(session('user_type')) }}
+              </h4>
               <!-- avatar button -->
               <div class="relative mr-1" x-data="{ isOpen: false }">
                 <button @click="isOpen = !isOpen" class="p-1 bg-gray-200 rounded-full focus:outline-none focus:ring">
                   <img
                     class="object-cover w-8 h-8 rounded-full"
-                    src="https://avatars0.githubusercontent.com/u/57622665?s=460&u=8f581f4c4acd4c18c33a87b3e6476112325e8b38&v=4"
-                    alt="Ahmed Kamel"
+                    src="https://img.icons8.com/?size=100&id=7820&format=png&color=000000"
+                    alt="Icon"
                   />
                 </button>
                 <!-- green dot -->
@@ -215,17 +216,11 @@
                   class="absolute mt-3 transform -translate-x-full bg-white rounded-md shadow-lg min-w-max"
                 >
                   <div class="flex flex-col p-4 space-y-1 font-medium border-b">
-                    <span class="text-gray-800">Ahmed Kamel</span>
-                    <span class="text-sm text-gray-400">ahmed.kamel@example.com</span>
+                    <span class="text-gray-800">{{ session('user_name', 'Guest') }}</span>
+                    <span class="text-sm text-gray-500">
+                      {{ session('user_info', '') }}
+                  </span>
                   </div>
-                  <ul class="flex flex-col p-2 my-2 space-y-1">
-                    <li>
-                      <a href="#" class="block px-2 py-1 transition rounded-md hover:bg-gray-100">Link</a>
-                    </li>
-                    <li>
-                      <a href="#" class="block px-2 py-1 transition rounded-md hover:bg-gray-100">Another Link</a>
-                    </li>
-                  </ul>
                   <div class="flex items-center justify-center p-4 text-blue-700 underline border-t">
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                       @csrf
