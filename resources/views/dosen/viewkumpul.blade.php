@@ -43,36 +43,5 @@
             </div>
           </div>
         </div>
-    
-        <!-- Popup Edit -->
-        <div x-show="showEdit" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50">
-          <div class="bg-white rounded-lg shadow-lg w-96 p-6">
-            <h2 class="text-xl font-semibold text-gray-800">Edit Dosen</h2>
-            <form method="POST" :action="'/dosen/' + selectedDosen.nidn">
-              @csrf
-              @method('PUT')
-    
-              <div class="mt-4">
-                <label class="block text-gray-700">Nama</label>
-                <input type="text" name="nama" class="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" x-model="selectedDosen.nama">
-              </div>
-    
-              <div class="mt-4">
-                <label class="block text-gray-700">NIDN</label>
-                <input type="text" name="nidn" class="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" x-model="selectedDosen.nidn" readonly>
-              </div>
-    
-              <div class="mt-4">
-                <label class="block text-gray-700">Mata Kuliah</label>
-                <input type="text" name="mata_kuliah" class="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" x-model="selectedDosen.mata_kuliah">
-              </div>
-    
-              <div class="mt-6 flex justify-end">
-                <button type="button" @click="showEdit = false" class="px-4 py-2 text-gray-500 bg-gray-200 rounded-lg hover:bg-gray-300">Batal</button>
-                <button type="submit" class="px-4 py-2 ml-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700">Simpan</button>
-              </div>
-            </form>
-          </div>
-        </div>
       </div>
 </x-navigasi>
