@@ -69,7 +69,3 @@ Route::post('/inputtugas', [TugasController::class, 'input'])->name('dosen.addtu
 
 Route::get('/dosen/viewkumpul', [PengumpulanController::class, 'index'])->name('kumpul.index');
 Route::get('/dosen/viewkumpul/{id_pt}', [PengumpulanController::class, 'view'])->name('kumpul.view');
-
-
-
-
