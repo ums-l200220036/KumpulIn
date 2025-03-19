@@ -4,30 +4,35 @@ namespace App\Http\Controllers;
 use App\Models\Pengumpulan;
 use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Storage;
-=======
 use Illuminate\Support\Facades\Auth;
->>>>>>> 80a44f5faea8f66163c2cf97557fb65bb115431d
 
 class PengumpulanController extends Controller
 {
-    public function input(Request $request, $id_tugas) // Tambahkan $id
+   public function input(Request $request)
     {
-<<<<<<< HEAD
-        $request->validate([
-            'file' => 'required|file|mimes:pdf,jpg,png,jpeg|max:2048'
+        // Validasi input
+        $validated = $request->validate([
+            'file' => 'required|file|mimes:pdf,docx,xlsx,pptx,zip|max:10240'
         ]);
-        // simpan file
 
-        $filePath = $request->file('file')->store('uploads', 'public');
+        // Debugging: Menampilkan request yang masuk
+        // dd($request->all());
+
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $fileName = time() . '_' . $file->getClientOriginalName(); // Nama unik
+            $validated['file'] = $file->storeAs('file_kumpul', $fileName, 'public');
+        }
+
+        $user = Auth::user();
 
         Pengumpulan::create([
-            'file_url' => $filePath
+            'mahasiswa_nim' => $user->nim,
+            'file_url' => $validated['file']
         ]);
 
-
-        return redirect()->route('mahasiswa.kumpultugas')->with('success', 'Tugas berhasil dikumpulkan');
+        return redirect()->route('mahasiswa.home')->with('success', 'Tugas berhasil dikumpulkan');
     }
 
     public function index()
@@ -48,31 +53,6 @@ class PengumpulanController extends Controller
         abort(404, 'File tidak ditemukan');
     }
 
-}
-=======
-        $validated = $request->validate([
-            'file' => 'required|file|mimes:pdf,docx,xlsx,pptx,zip|max:2048'
-        ]);
-
-        if ($request->hasFile('file')) {
-            $validated['file'] = $request->file('file')->store('file_kumpul', 'public');
-        }
-
-        $mahasiswa = Mahasiswa::where('nim', session('nim'))->first();
-
-        if (!$mahasiswa) {
-            return redirect()->route('tugas.kumpul', ['id_tugas' => $id_tugas])->with('error', 'Mahasiswa tidak ditemukan');
-        }
-
-        Pengumpulan::create([
-            'id_tugas' => $id_tugas,
-            'mahasiswa_nim' => $mahasiswa->nim,
-            'file_url' => $validated['file']
-        ]);
-
-        return redirect()->route('tugas.kumpul', ['id_tugas' => $id_tugas])->with('success', 'Tugas berhasil dikumpulkan');
-    }
-
     // Fungsi untuk menampilkan tugas mahasiswa berdasarkan NIM yang login
     public function tugasByNIM()
     {
@@ -91,8 +71,8 @@ class PengumpulanController extends Controller
     public function semuaTugas()
     {
         $pengumpulan = Pengumpulan::with('mahasiswa')->get();
+        
 
         return view('semua-tugas', compact('pengumpulan'));
     }
 }
->>>>>>> 80a44f5faea8f66163c2cf97557fb65bb115431d

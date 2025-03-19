@@ -7,12 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pengumpulan extends Model
 {
-<<<<<<< HEAD
     protected $table = 'pengumpulan';
     protected $primaryKey = 'id_pt';
-    protected $fillable = ['file_url'];
-}
-=======
     use HasFactory;
 
     protected $fillable = [
@@ -34,4 +30,3 @@ class Pengumpulan extends Model
         return $this->belongsTo(Mahasiswa::class, 'mahasiswa_nim', 'nim');
     }
 }
->>>>>>> 80a44f5faea8f66163c2cf97557fb65bb115431d

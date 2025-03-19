@@ -55,7 +55,8 @@ Route::middleware(['auth:mahasiswa'])->group(function () {
     Route::get('/tugas/{id_tugas}/kumpul', [TugasController::class, 'kumpulTugas'])->name('tugas.kumpul');
 
     // Proses submit tugas
-    Route::post('/tugas/{id_tugas}/kumpul', [PengumpulanController::class, 'input'])->name('mahasiswa.kumpul');
+    Route::post('tugas/kumpul', [PengumpulanController::class, 'input'])->name('mahasiswa.kumpul');
+
 });
 
 
@@ -68,5 +69,7 @@ Route::post('/inputtugas', [TugasController::class, 'input'])->name('dosen.addtu
 
 Route::get('/dosen/viewkumpul', [PengumpulanController::class, 'index'])->name('kumpul.index');
 Route::get('/dosen/viewkumpul/{id_pt}', [PengumpulanController::class, 'view'])->name('kumpul.view');
+
+
 
 
