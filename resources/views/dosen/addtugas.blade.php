@@ -31,7 +31,7 @@
 
             <div class="mb-5">
                 <label
-                    for="email"
+                    for="deskripsi"
                     class="mb-3 block text-base font-medium text-[#07074D]"
                 >
                     Deskripsi Tugas :
@@ -45,7 +45,28 @@
                     rows="10" 
                     class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md">
                 </textarea>
-                
+            </div>
+
+            <div class="mb-5">
+                <label for="semester" class="mb-3 block text-base font-medium text-[#07074D]">
+                    Pilih Semester:
+                </label>
+                <select 
+                    name="semester" 
+                    id="semester" 
+                    required 
+                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                >
+                    <option value="" disabled selected>Pilih Semester</option>
+                    <option value="1">Semester 1</option>
+                    <option value="2">Semester 2</option>
+                    <option value="3">Semester 3</option>
+                    <option value="4">Semester 4</option>
+                    <option value="5">Semester 5</option>
+                    <option value="6">Semester 6</option>
+                    <option value="7">Semester 7</option>
+                    <option value="8">Semester 8</option>
+                </select>
             </div>
     
             <div class="mb-6 pt-4">
@@ -81,5 +102,4 @@
         </form>
         </div>
     </div>
-
 </x-navigasi>

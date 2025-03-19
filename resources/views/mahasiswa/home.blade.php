@@ -1,21 +1,23 @@
 <x-navigasi>
     @section('title', 'Home')
-    <div class="grid grid-cols-1 gap-5 mt-6 sm:grid-cols-2 lg:grid-cols-4 ">
-        <!-- Start Card List -->
-        <div class="bg-white p-3 rounded-xl shadow-xl flex items-center justify-between mt-4">
-            <div class="flex space-x-6 items-center">
-                <img src="https://i.pinimg.com/originals/25/0c/a0/250ca0295215879bd0d53e3a58fa1289.png" class="w-auto h-24 rounded-lg"/>
-                <div>
-                    <p class="font-semibold text-base">Sistem Informasi</p>
-                    <p class="font-semibold text-sm text-gray-400">Tugas Minggu ke 12</p>
-                </div>              
-            </div>
-               
-            <div class="flex space-x-2 items-center">
-                <div class="bg-gray-300 rounded-md p-2 flex items-center">
-                    <i class="fas fa-chevron-right my-1 fa-sm text-black"></i>
+
+    <h1 class="text-2xl font-bold">Daftar Tugas</h1>
+    
+    <div class="grid grid-cols-1 gap-5 mt-6 sm:grid-cols-2 lg:grid-cols-4">
+        @foreach($tugas as $item)
+            <a href="{{ route('tugas.kumpul', ['id_tugas' => $item->id_tugas]) }}" class="block">
+                <div class="bg-white p-4 rounded-xl shadow-lg flex items-center justify-between hover:bg-gray-100 transition">
+                    <div>
+                        <p class="font-semibold text-lg">{{ $item->judul }}</p>
+                        <p class="text-gray-500 text-sm">{{ $item->deskripsi }}</p>
+                        @if($item->file)
+                            <a href="{{ asset('storage/' . $item->file) }}" class="text-blue-500 text-sm font-semibold mt-2 block" target="_blank">
+                                Lihat File
+                            </a>
+                        @endif
+                    </div>
                 </div>
-            </div>    
-        </div>
+            </a>
+        @endforeach
     </div>
 </x-navigasi>

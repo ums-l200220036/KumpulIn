@@ -44,22 +44,20 @@ Route::middleware(['auth:admin'])->group(function () {
 });
 
 Route::middleware(['auth:dosen'])->group(function () {
-    Route::get('/dosen/dashboard', function () {
-        return view('dosen.home');
-    })->name('dosen.home');
+    Route::get('/dosen/dashboard', [TugasController::class, 'homeDosen'])->name('dosen.home');
 });
 
 Route::middleware(['auth:mahasiswa'])->group(function () {
-    Route::get('/mahasiswa/dashboard', function () {
-        return view('mahasiswa.home');
-    })->name('mahasiswa.home');
+    // Dashboard Mahasiswa
+    Route::get('/mahasiswa/dashboard', [TugasController::class, 'homeMahasiswa'])->name('mahasiswa.home');
 
+    // Halaman untuk kumpul tugas
+    Route::get('/tugas/{id_tugas}/kumpul', [TugasController::class, 'kumpulTugas'])->name('tugas.kumpul');
+
+    // Proses submit tugas
+    Route::post('/tugas/{id_tugas}/kumpul', [PengumpulanController::class, 'input'])->name('mahasiswa.kumpul');
 });
 
-// Dosen
-Route::get('homedosen', function(){
-    return view('dosen.home');
-})->name('home.dosen2');
 
 Route::get('addtugas', function(){
     return view('dosen.addtugas');
@@ -67,15 +65,6 @@ Route::get('addtugas', function(){
 
 Route::post('/inputtugas', [TugasController::class, 'input'])->name('dosen.addtugas');
 
-Route::get('homemhs', function(){
-    return view('mahasiswa.home');
-});
-
-Route::get('kumpultugas', function(){
-    return view('mahasiswa.kumpultugas');
-})->name('mahasiswa.kumpultugas');
-
-Route::post('/kumpultugas', [PengumpulanController::class, 'input'])->name('mahasiswa.kumpul');
 
 Route::get('/dosen/viewkumpul', [PengumpulanController::class, 'index'])->name('kumpul.index');
 Route::get('/dosen/viewkumpul/{id_pt}', [PengumpulanController::class, 'view'])->name('kumpul.view');

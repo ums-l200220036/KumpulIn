@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('pengumpulan', function (Blueprint $table) {
             $table->bigIncrements('id_pt');
-            $table->unsignedBigInteger('dosen_has_log_login_log_login_id_log')->nullable();
-            $table->string('dosen_has_log_login_dosen_nidn')->nullable();
             $table->string('mahasiswa_nim')->nullable();
             $table->string('file_url');
             $table->integer('nilai')->nullable();
