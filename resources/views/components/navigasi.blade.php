@@ -294,7 +294,38 @@
           }
         });
       }
+
+      function confirmDelete(event) {
+        event.preventDefault();
+        Swal.fire({
+            title: "Apakah Anda yakin?",
+            text: "Data yang dihapus tidak bisa dikembalikan!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Ya, hapus!",
+            cancelButtonText: "Batal"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                event.target.closest("form").submit(); // Kirim form jika dikonfirmasi
+            }
+        });
+    }
+
+  
+  </script>
+  @if(session('success'))
+  <script>
+        Swal.fire({
+            title: "Success!",
+            text: "{{ session('success') }}",
+            icon: "success",
+            confirmButtonText: "OK"
+        });
     </script>
+  @endif 
+  
 </div>
 </body>
 </html>

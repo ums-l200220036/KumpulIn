@@ -35,10 +35,10 @@
                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $m->semester }}</td>
                 <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
                   <button @click="showEdit = true; selectedMahasiswa = {{ json_encode($m) }}" class="text-indigo-600 hover:text-indigo-900">Edit</button>
-                  <form action="{{ route('mahasiswa.destroy', $m->nim) }}" method="POST" class="inline-block" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                  <form action="{{ route('mahasiswa.destroy', $m->nim) }}" method="POST" class="inline-block">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="text-red-500 hover:text-red-700 hover:underline">Delete</button>
+                    <button type="submit" class="text-red-500 hover:text-red-700 hover:underline" onclick="confirmDelete(event)">Delete</button>
                   </form>
                 </td>
               </tr>
@@ -81,14 +81,4 @@
     </div>
   </div>
 
-  @if(session('success'))
-        <script>
-            Swal.fire({
-                title: "Success!",
-                text: "{{ session('success') }}",
-                icon: "success",
-                confirmButtonText: "OK"
-            });
-        </script>
-    @endif
 </x-navigasi>

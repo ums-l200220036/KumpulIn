@@ -45,7 +45,7 @@ class DosenController extends Controller
 
 
 
-        return redirect()->route('view.dosen')->with('success', 'Data berhasil disimpan!');
+        return redirect()->route('view.dosen')->with('success', 'Data Dosen berhasil ditambahkan.');
 
        
     }
