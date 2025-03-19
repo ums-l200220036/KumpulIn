@@ -75,3 +75,7 @@ Route::get('kumpultugas', function(){
 })->name('mahasiswa.kumpultugas');
 
 Route::post('/kumpultugas', [PengumpulanController::class, 'input'])->name('mahasiswa.kumpul');
+
+Route::get('viewkumpul', function(){
+    return view('dosen.viewkumpul');
+})->name('view.kumpul');

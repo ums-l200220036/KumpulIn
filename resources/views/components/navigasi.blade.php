@@ -138,7 +138,7 @@
             <!-- Sidebar Links... -->
           </ul>
         </nav>
-        <!-- Sidebar footer -->git 
+        <!-- Sidebar footer -->
       </aside>
 
       <div class="flex flex-col flex-1 h-full overflow-hidden">
