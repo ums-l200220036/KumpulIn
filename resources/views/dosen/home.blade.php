@@ -13,7 +13,7 @@
                     <img src="https://i.pinimg.com/originals/25/0c/a0/250ca0295215879bd0d53e3a58fa1289.png" class="w-auto h-24 rounded-lg"/>
                     <div>
                         <p class="font-semibold text-base">{{ $item->judul }}</p>
-                        <p class="font-semibold text-sm text-gray-400">{{ $item->deskripsi }}</p>
+                        <p class="font-semibold text-xs text-gray-400">Dibuat : {{ $item->created_at->format('d F Y') }}</p>
                         <a href="{{ asset('storage/' . $item->file) }}" class="text-blue-500 text-sm" target="_blank">Lihat File</a>
                     </div>              
                 </div>
@@ -24,3 +24,4 @@
     @endisset
     </div>    
 </x-navigasi>
+
