@@ -6,6 +6,8 @@ use App\Http\Controllers\DosenController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\TugasController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\DashboardController;
+
 
 
 Route::middleware('guest')->group(function () {
@@ -23,9 +25,8 @@ Route::post('/logout', function () {
 
 // Middleware Role-based Dashboard (proteksi akses sesuai role)
 Route::middleware(['auth:admin'])->group(function () {
-    Route::get('/admin/dashboard', function () {
-        return view('admin.home');
-    })->name('admin.home');
+    // Dashboard Admin
+    Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.home');
 
     //Dosen
     Route::get('/adddosen', [DosenController::class, 'index'])->name('form.dosen');
