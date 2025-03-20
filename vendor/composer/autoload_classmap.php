@@ -17,6 +17,7 @@ return array(
     'App\\Http\\Controllers\\DashboardController' => $baseDir . '/app/Http/Controllers/DashboardController.php',
     'App\\Http\\Controllers\\DosenController' => $baseDir . '/app/Http/Controllers/DosenController.php',
     'App\\Http\\Controllers\\MahasiswaController' => $baseDir . '/app/Http/Controllers/MahasiswaController.php',
+    'App\\Http\\Controllers\\PengumpulanController' => $baseDir . '/app/Http/Controllers/PengumpulanController.php',
     'App\\Http\\Controllers\\TugasController' => $baseDir . '/app/Http/Controllers/TugasController.php',
     'App\\Http\\Middleware\\RedirectIfAuthenticated' => $baseDir . '/app/Http/Middleware/RedirectIfAuthenticated.php',
     'App\\Models\\Admin' => $baseDir . '/app/Models/Admin.php',
