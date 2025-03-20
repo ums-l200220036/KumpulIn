@@ -45,6 +45,12 @@ Route::middleware(['auth:admin'])->group(function () {
 
 Route::middleware(['auth:dosen'])->group(function () {
     Route::get('/dosen/dashboard', [TugasController::class, 'homeDosen'])->name('dosen.home');
+    Route::post('/inputtugas', [TugasController::class, 'input'])->name('dosen.addtugas');
+    Route::get('/dosen/viewkumpul', [PengumpulanController::class, 'index'])->name('kumpul.index');
+    Route::get('/dosen/viewkumpul/{id_pt}', [PengumpulanController::class, 'view'])->name('kumpul.view');
+    Route::get('addtugas', function(){
+         return view('dosen.addtugas');
+    })->name('add.tugas');
 });
 
 Route::middleware(['auth:mahasiswa'])->group(function () {
@@ -60,12 +66,3 @@ Route::middleware(['auth:mahasiswa'])->group(function () {
 });
 
 
-Route::get('addtugas', function(){
-    return view('dosen.addtugas');
-})->name('add.tugas');
-
-Route::post('/inputtugas', [TugasController::class, 'input'])->name('dosen.addtugas');
-
-
-Route::get('/dosen/viewkumpul', [PengumpulanController::class, 'index'])->name('kumpul.index');
-Route::get('/dosen/viewkumpul/{id_pt}', [PengumpulanController::class, 'view'])->name('kumpul.view');
